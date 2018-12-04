@@ -3,6 +3,7 @@ package java8;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class OrdenaStrings {
 
@@ -14,13 +15,21 @@ public class OrdenaStrings {
 		palavras.add("Camargo");
 		palavras.add("Leite");
 		
-		Comparator<String> comparador = new ComparadorPorTamanho();
 		
-		palavras.sort(comparador);
-		System.out.println(palavras);
-		
+		palavras.sort(new ComparadorPorTamanho());
+		palavras.forEach(new ConsumidorDeStrings());
 	}
 
+}
+
+
+class ConsumidorDeStrings implements Consumer<String> {
+
+	@Override
+	public void accept(String t) {
+		System.out.println(t);
+	}
+	
 }
 
 class ComparadorPorTamanho implements Comparator<String> {
