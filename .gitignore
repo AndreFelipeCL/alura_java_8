@@ -4,6 +4,10 @@
 ### Java ###
 # Compiled class file
 *.class
+*.orig
+
+### Directories ###
+/bin/**
 
 # Log file
 *.log
