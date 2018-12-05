@@ -14,7 +14,6 @@ public class OrdenaStrings {
 		palavras.add("Leite");
 
 		palavras.sort((o1, o2) -> Integer.compare(o1.length(), o2.length()));
-
 		palavras.forEach(t -> System.out.println(t));
 	}
 
